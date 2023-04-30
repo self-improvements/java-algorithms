@@ -1,0 +1,31 @@
+import java.nio.charset.StandardCharsets
+
+plugins {
+    id 'java'
+}
+
+group 'io.github.imsejin.study'
+version '0.1.0'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+// Prevents error from occurring "unmappable character for encoding MS949".
+[compileJava, compileTestJava]*.options*.encoding = StandardCharsets.UTF_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+wrapper {
+    gradleVersion = '8.1.1'
+    distributionType = Wrapper.DistributionType.BIN
+}
