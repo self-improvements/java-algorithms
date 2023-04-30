@@ -1,2 +1,2 @@
-# java-algorithms
-Algorithms for java language
+# Java Algorithms
+Algorithms for java language.
