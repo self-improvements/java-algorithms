@@ -1,9 +1,9 @@
-package io.github.imsejin.study.baekjoon;
+package io.github.imsejin.study.baekjoon.step1;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class P11382 {
+public class P10869 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -11,14 +11,16 @@ public class P11382 {
 
         StringTokenizer tokenizer = new StringTokenizer(line);
 
-        long a = Long.parseLong(tokenizer.nextToken());
-        long b = Long.parseLong(tokenizer.nextToken());
-        long c = Long.parseLong(tokenizer.nextToken());
-        reader.close();
+        int a = Integer.parseInt(tokenizer.nextToken());
+        int b = Integer.parseInt(tokenizer.nextToken());
 
         PrintWriter writer =
                 new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-        writer.println(a + b + c);
+        writer.println(a + b);
+        writer.println(a - b);
+        writer.println(a * b);
+        writer.println(a / b);
+        writer.println(a % b);
         writer.close();
     }
 

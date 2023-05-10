@@ -1,9 +1,9 @@
-package io.github.imsejin.study.baekjoon;
+package io.github.imsejin.study.baekjoon.step1;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class P10998 {
+public class P1008 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -13,7 +13,7 @@ public class P10998 {
 
         int a = Integer.parseInt(tokenizer.nextToken());
         int b = Integer.parseInt(tokenizer.nextToken());
-        int answer = a * b;
+        double answer = (double) a / b;
 
         PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
         writer.println(answer);
