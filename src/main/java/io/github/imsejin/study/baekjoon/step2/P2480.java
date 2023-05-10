@@ -8,26 +8,31 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class P2884 {
+public class P2480 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokenizer = new StringTokenizer(reader.readLine());
-        reader.close();
 
-        int hour = Integer.parseInt(tokenizer.nextToken());
-        int minute = Integer.parseInt(tokenizer.nextToken());
+        int a = Integer.parseInt(tokenizer.nextToken());
+        int b = Integer.parseInt(tokenizer.nextToken());
+        int c = Integer.parseInt(tokenizer.nextToken());
+
+        reader.close();
 
         PrintWriter writer =
                 new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
-        if (minute >= 45) {
-            writer.printf("%d %d%n", hour, minute - 45);
+        int price;
+        if (a == b && b == c) {
+            price = 10000 + a * 1000;
+        } else if (a == b || b == c || a == c) {
+            price = 1000 + (a == b ? a : c) * 100;
         } else {
-        // writer.printf("%d %d%n", hour == 0 ? 23 : hour - 1, 60 + minute - 45);
-        // writer.printf("%d %d%n", hour == 0 ? 23 : hour - 1, minute + (60 - 45));
-            writer.printf("%d %d%n", hour == 0 ? 23 : hour - 1, 60 - Math.abs(minute - 45));
+            price = Math.max(a, Math.max(b, c)) * 100;
         }
+
+        writer.println(price);
 
         writer.close();
     }
