@@ -12,8 +12,8 @@ public class P1145 {
                     .mapToInt(Integer::parseInt).sorted().toArray();
 
             int n = numbers[0];
-            int count = 0;
             while (true) {
+                int count = 0;
                 for (int number : numbers) {
                     if (n % number == 0) {
                         count++;
@@ -24,7 +24,6 @@ public class P1145 {
                     break;
                 }
 
-                count = 0;
                 n++;
             }
 
