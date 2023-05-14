@@ -1,4 +1,4 @@
-package io.github.imsejin.study.baekjoon;
+package io.github.imsejin.study.baekjoon.silver;
 
 import java.io.*;
 import java.util.StringTokenizer;
