@@ -1,4 +1,4 @@
-package io.github.imsejin.study.baekjoon.bronze;
+package io.github.imsejin.study.baekjoon.silver;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
