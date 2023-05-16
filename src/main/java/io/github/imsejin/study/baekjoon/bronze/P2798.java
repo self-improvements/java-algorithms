@@ -1,9 +1,15 @@
 package io.github.imsejin.study.baekjoon.bronze;
 
+import io.github.imsejin.study.meta.Problem;
+import io.github.imsejin.study.meta.Tag;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+@Problem(tags = {
+        Tag.COMBINATION,
+})
 public class P2798 {
 
     public static void main(String[] args) throws Exception {

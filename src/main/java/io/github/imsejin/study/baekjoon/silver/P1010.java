@@ -1,8 +1,19 @@
 package io.github.imsejin.study.baekjoon.silver;
 
-import java.io.*;
+import io.github.imsejin.study.meta.Problem;
+import io.github.imsejin.study.meta.Tag;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
+@Problem(tags = {
+        Tag.COMBINATION,
+        Tag.PASCAL_TRIANGLE,
+})
 public class P1010 {
 
     public static void main(String[] args) throws Exception {
