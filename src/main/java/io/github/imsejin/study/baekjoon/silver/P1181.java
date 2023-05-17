@@ -1,11 +1,17 @@
 package io.github.imsejin.study.baekjoon.silver;
 
+import io.github.imsejin.study.meta.Problem;
+import io.github.imsejin.study.meta.Tag;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
 import static java.util.Comparator.comparing;
 
+@Problem(tags = {
+        Tag.SORTING,
+})
 public class P1181 {
 
     public static void main(String[] args) throws Exception {
