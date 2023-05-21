@@ -25,24 +25,6 @@ public class P11650 {
         }
     }
 
-    static int solve(int n) {
-        int degree = 1;
-        if (n == 1) return degree;
-
-        int startNo = 2;
-        while (true) {
-            degree++;
-
-            if (startNo <= n && n <= (startNo + 6 * degree - 7)) {
-                break;
-            }
-
-            startNo += 6 * (degree - 1);
-        }
-
-        return degree;
-    }
-
     private static class Coordinate implements Comparable<Coordinate> {
         private final int x;
         private final int y;
