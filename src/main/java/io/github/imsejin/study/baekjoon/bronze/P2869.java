@@ -21,15 +21,20 @@ public class P2869 {
     static int solve(int ascent, int descent, int height) {
         if (ascent >= height) return 1;
 
+        // An = A + (n-1)d ... 등차수열
+
+        // 마지막 날에 ascent만큼 오르고 내려가지 않는다.
+        // ascent < height 경우 마지막 날에 ascent만큼 올라가야 하는 게 확정이니
+        // 마지막 날에 올라갈 길이를 뺀 나머지 길이를 대상으로 계산한다.
         int remain = height - ascent;
         int difference = ascent - descent;
 
         if (remain % difference == 0) {
+            // 나누어 떨어지면, 마지막 날만 더하고 끝.
             return remain / difference + 1;
-        } else if (remain <= difference) {
-            return remain / difference + 2;
         } else {
-            return remain / difference;
+            // 나누어 떨어지지 않으면, 추가 하루 + 마지막 날을 더하고 끝.
+            return remain / difference + 2;
         }
     }
 
