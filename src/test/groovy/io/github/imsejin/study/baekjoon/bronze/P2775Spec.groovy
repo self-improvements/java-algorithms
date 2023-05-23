@@ -13,10 +13,10 @@ class P2775Spec extends Specification {
 
         where:
         floor | room || expected
-//        1     | 3    || 6
-//        2     | 3    || 10
-//        3     | 1    || 1
-//        3     | 2    || 5
+        1     | 3    || 6
+        2     | 3    || 10
+        3     | 1    || 1
+        3     | 2    || 5
         3     | 3    || 15
         3     | 4    || 35
         4     | 3    || 21
