@@ -21,45 +21,96 @@ public class P1016 {
                 board[i] = reader.readLine().toCharArray();
             }
 
+            // board[rowCount-1][columnCount-1]를 커버하기 위해서 체스판을 뒤집어서 한 번 더 검사한다.
+            char[][] reversedBoard = new char[board.length][board[0].length];
+            for (int i = board.length - 1; i >= 0; i--) {
+                for (int j = board[i].length - 1; j >= 0; j--) {
+                    reversedBoard[-(i - board.length + 1)][-(j - board[i].length + 1)] = board[i][j];
+                }
+            }
+
             int answer = solve(board);
+            answer = Math.min(answer, solve(reversedBoard));
+
             System.out.println(answer);
         }
     }
 
     static int solve(char[][] board) {
-        int fixCount = 0;
+        int min = Integer.MAX_VALUE;
+        Context ctx = new Context(board);
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (isOdd(i+1)) {
-                    // 홀수 행: WBWBWBWB
-                    char color = isOdd(j + 1) ? WHITE : BLACK;
-                    if (board[i][j] != color) ;
-                } else {
-                    // 짝수 행: BWBWBWBW
+        int rowLoopCount = (board.length % 8) + 1;
+        int columnLoopCount = (board[0].length % 8) + 1;
 
-                }
-                if (board[i][j] != WHITE) ;
+        for (int i = 0; i < rowLoopCount; i++) {
+            for (int j = 0; j < columnLoopCount; j++) {
+                ctx.rowCursor = i;
+                ctx.columnCursor = j;
+                ctx.rootCellColor = board[i][j];
+
+                int illegalCellCount = getIllegalCountOnSquare(ctx);
+                min = Math.min(min, illegalCellCount);
             }
-
-//            for (int j = 0; j < board[i].length - 7; j++) {
-//                if (board[i][j] != WHITE)
-//                if (board[i][j + 1] != BLACK)
-//                if (board[i][j + 2] != WHITE)
-//                if (board[i][j + 3] != BLACK)
-//                if (board[i][j + 4] != WHITE)
-//                if (board[i][j + 5] != BLACK)
-//                if (board[i][j + 6] != WHITE)
-//                if (board[i][j + 7] != BLACK)
-//            }
-
         }
 
-        return fixCount;
+        return min;
+    }
+
+    private static int getIllegalCountOnSquare(Context ctx) {
+        int illegalCellCount = 0;
+
+        for (int i = ctx.rowCursor; i < ctx.rowCursor + 8; i++) {
+            ctx.rowIndex = i;
+            ctx.row = ctx.board[i];
+
+            int count = getIllegalCellCountOnRow(ctx);
+            illegalCellCount += count;
+        }
+
+        return illegalCellCount;
+    }
+
+    private static int getIllegalCellCountOnRow(Context ctx) {
+        int illegalCellCount = 0;
+
+        for (int i = ctx.columnCursor; i < ctx.columnCursor + 8; i++) {
+            char color = ctx.getCorrectColor(i);
+            if (ctx.row[i] != color) illegalCellCount++;
+        }
+
+        return illegalCellCount;
     }
 
     private static boolean isOdd(int number) {
         return (number & 1) == 1;
+    }
+
+    private static class Context {
+        private final char[][] board;
+
+        private char[] row;
+        private int rowIndex;
+
+        private char rootCellColor;
+        private int rowCursor;
+        private int columnCursor;
+
+        private Context(char[][] board) {
+            this.board = board;
+        }
+
+        public char getCorrectColor(int columnIndex) {
+            if (isOdd(rowCursor) == isOdd(rowIndex) && isOdd(columnCursor) == isOdd(columnIndex)) {
+                // 가로/세로
+                return rootCellColor;
+            } else if (isOdd(rowCursor) != isOdd(rowIndex) && isOdd(columnCursor) != isOdd(columnIndex)) {
+                // 대각선
+                return rootCellColor;
+            } else {
+                return rootCellColor == WHITE ? BLACK : WHITE;
+            }
+        }
     }
 
 }
