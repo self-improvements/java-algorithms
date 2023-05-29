@@ -69,8 +69,10 @@ public class P1018 {
         }
 
         private static int[] getUnmatchedCellCountOnRow(Context ctx) {
+            // 백으로 시작하는 경우, 흑으로 시작하는 경우를 저장한다.
             int[] counts = new int[2];
 
+            // 매 행마다 백/흑 라인이 번갈아 발생한다.
             boolean odd = (ctx.rowIndexOnWindow & 1) == 1;
 
             int columnCursorEnd = ctx.columnCursor + WINDOW_SIZE;

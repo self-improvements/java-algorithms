@@ -9,11 +9,11 @@ class P1018Spec extends Specification {
         def board = lines.collect { it.toCharArray() } as char[][]
 
         when:
-        def actual = P1018.OddEven.solve(board)
+        def actual = P1018.Line.solve(board)
 
         then:
         actual == expected
-        actual == P1018.Line.solve(board)
+        actual == P1018.OddEven.solve(board)
 
         where:
         lines                       | expected
