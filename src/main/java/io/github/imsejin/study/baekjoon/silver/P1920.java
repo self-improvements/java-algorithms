@@ -24,8 +24,8 @@ public class P1920 {
 
             StringBuilder sb = new StringBuilder();
             for (int target : targets) {
-                int index = Arrays.binarySearch(origins, target);
-//                int index = solve(origins, target);
+//                int index = Arrays.binarySearch(origins, target);
+                int index = binarySearch(origins, target);
                 sb.append(index < 0 ? 0 : 1).append('\n');
             }
 
@@ -33,8 +33,27 @@ public class P1920 {
         }
     }
 
-    static int solve(int[] numbers, int target) {
-        return 0;
+    static int binarySearch(int[] numbers, int target) {
+        int low = 0;
+        int pivot;
+        int high = numbers.length - 1;
+
+        while (low <= high) {
+            pivot = (low + high) / 2;
+            int value = numbers[pivot];
+
+            if (value == target) {
+                return pivot;
+            } else if (value < target) {
+                // Search to higher.
+                low = pivot + 1;
+            } else {
+                // Search to lower.
+                high = pivot - 1;
+            }
+        }
+
+        return -1;
     }
 
 }
