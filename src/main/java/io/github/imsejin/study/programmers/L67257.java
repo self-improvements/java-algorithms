@@ -12,7 +12,7 @@ import java.util.function.LongBinaryOperator;
 public class L67257 {
 
     static long solve(String expression) {
-        List<Operation> Operation = parse(expression);
+        List<Operation> operations = parse(expression);
         List<Operation> items;
 
         long max = 0;
@@ -24,7 +24,7 @@ public class L67257 {
                 for (int k = 0; k < operators.length; k++) {
                     if (i == j || j == k || i == k) continue;
 
-                    items = new LinkedList<>(Operation);
+                    items = new LinkedList<>(operations);
 
                     calculate(items, operators[i]);
                     calculate(items, operators[j]);
