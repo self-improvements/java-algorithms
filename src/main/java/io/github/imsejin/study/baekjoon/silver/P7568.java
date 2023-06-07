@@ -2,6 +2,7 @@ package io.github.imsejin.study.baekjoon.silver;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class P7568 {
@@ -33,17 +34,16 @@ public class P7568 {
         }
 
         int[] ranks = new int[people.length];
+        Arrays.fill(ranks, 1);
 
         for (int i = 0; i < people.length; i++) {
             for (int j = 0; j < people.length; j++) {
                 if (i == j) continue;
 
                 if (people[i].weight < people[j].weight && people[i].height < people[j].height) {
-                    people[i].rank++;
+                    ranks[i]++;
                 }
             }
-
-            ranks[i] = people[i].rank;
         }
 
         return ranks;
@@ -52,7 +52,6 @@ public class P7568 {
     private static class Human {
         private final int weight;
         private final int height;
-        private int rank = 1;
 
         private Human(int weight, int height) {
             this.weight = weight;
@@ -69,7 +68,7 @@ public class P7568 {
 
         @Override
         public String toString() {
-            return String.format("Human(weight=%d, height=%d, rank=%d)", weight, height, rank);
+            return String.format("Human(weight=%d, height=%d)", weight, height);
         }
     }
 
