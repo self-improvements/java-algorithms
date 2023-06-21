@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L181849 {
 
-    public static int solve(String s) {
+    static int solve(String s) {
         int sum = 0;
 
         for (int i = 0; i < s.length(); i++) {

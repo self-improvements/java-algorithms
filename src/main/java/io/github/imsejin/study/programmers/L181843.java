@@ -8,7 +8,7 @@ import java.util.Queue;
  */
 public class L181843 {
 
-    public static int solve(String myString, String target) {
+    static int solve(String myString, String target) {
         if (target.isEmpty()) {
             return 1;
         }
