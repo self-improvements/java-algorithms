@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L120875 {
 
-    public static int solve(int[][] dots) {
+    static int solve(int[][] dots) {
         if (calcSlope(dots[0], dots[1]) == calcSlope(dots[2], dots[3])) {
             return 1;
         }

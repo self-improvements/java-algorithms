@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L181931 {
 
-    public static int solve(int a, int d, boolean[] included) {
+    static int solve(int a, int d, boolean[] included) {
         int sum = 0;
 
         for (int i = 0; i < included.length; i++) {

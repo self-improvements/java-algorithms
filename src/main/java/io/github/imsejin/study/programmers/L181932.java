@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L181932 {
 
-    public static String solve(String code) {
+    static String solve(String code) {
         Mode mode = Mode.EVEN;
         StringBuilder sb = new StringBuilder();
 

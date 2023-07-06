@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L181848 {
 
-    public static int solve(String s) {
+    static int solve(String s) {
         if (s == null || s.isEmpty()) {
             throw new IllegalArgumentException("s is null or empty: " + s);
         }

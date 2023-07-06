@@ -5,7 +5,7 @@ package io.github.imsejin.study.programmers;
  */
 public class L120812 {
 
-    public static int solve(int[] array) {
+    static int solve(int[] array) {
         int[] frequencies = new int[1000];
         for (int n : array) {
             frequencies[n]++;
