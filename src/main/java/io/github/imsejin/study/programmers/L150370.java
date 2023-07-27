@@ -31,7 +31,7 @@ public class L150370 {
             Integer month = termMap.get(type);
             LocalDate deleteDate = joinDate.plusMonths(month);
 
-            if (deleteDate.compareTo(todayDate) <= 0) {
+            if (!deleteDate.isAfter(todayDate)) {
                 privaciesToDelete.add(i + 1);
             }
         }
@@ -112,6 +112,7 @@ public class L150370 {
             int year = this.year;
             if (this.month + monthToAdd > 12) {
                 year += (this.month + monthToAdd) / 12;
+                if (month == 12) year--;
             }
 
             return new DateString(year, month, this.day);
@@ -124,7 +125,13 @@ public class L150370 {
 
         @Override
         public int compareTo(DateString o) {
-            return this.toString().compareTo(o.toString());
+            int comparison = Integer.compare(this.year, o.year);
+            if (comparison != 0) return comparison;
+
+            comparison = Integer.compare(this.month, o.month);
+            if (comparison != 0) return comparison;
+
+            return Integer.compare(this.day, o.day);
         }
     }
 

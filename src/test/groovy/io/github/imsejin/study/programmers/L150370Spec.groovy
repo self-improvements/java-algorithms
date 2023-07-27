@@ -10,6 +10,7 @@ class L150370Spec extends Specification {
 
         then:
         actual == expected as int[]
+        actual == L150370.solve1(today, terms as String[], privacies as String[])
 
         where:
         today        | terms                  | privacies                                                                        || expected
