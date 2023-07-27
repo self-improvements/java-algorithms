@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv1;
 
 /**
  * <a href="https://school.programmers.co.kr/learn/courses/30/lessons/155652">둘만의 암호</a>

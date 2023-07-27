@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

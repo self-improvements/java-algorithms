@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv0;
 
 /**
  * <a href="https://school.programmers.co.kr/learn/courses/30/lessons/181848">문자열을 정수로 변환하기</a>

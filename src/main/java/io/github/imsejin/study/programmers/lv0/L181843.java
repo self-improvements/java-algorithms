@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv0;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

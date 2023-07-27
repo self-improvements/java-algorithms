@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers
+package io.github.imsejin.study.programmers.lv0
 
 import spock.lang.Specification
 

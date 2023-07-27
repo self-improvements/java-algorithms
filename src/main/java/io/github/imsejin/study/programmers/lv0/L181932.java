@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv0;
 
 /**
  * <a href="https://school.programmers.co.kr/learn/courses/30/lessons/181932">코드 처리하기</a>

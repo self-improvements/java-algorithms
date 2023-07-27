@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv1;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

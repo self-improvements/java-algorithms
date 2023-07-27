@@ -1,4 +1,4 @@
-package io.github.imsejin.study.programmers;
+package io.github.imsejin.study.programmers.lv0;
 
 /**
  * <a href="https://school.programmers.co.kr/learn/courses/30/lessons/120875">평행</a>
