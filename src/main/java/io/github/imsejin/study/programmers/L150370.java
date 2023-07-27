@@ -1,6 +1,7 @@
 package io.github.imsejin.study.programmers;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -73,12 +74,7 @@ public class L150370 {
     // -------------------------------------------------------------------------------------------------
 
     private static LocalDate parseDate(String date) {
-        String[] fragments = date.split("\\.");
-        int year = Integer.parseInt(fragments[0]);
-        int month = Integer.parseInt(fragments[1]);
-        int day = Integer.parseInt(fragments[2]);
-
-        return LocalDate.of(year, month, day);
+        return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy.MM.dd"));
     }
 
     private static class DateString implements Comparable<DateString> {
