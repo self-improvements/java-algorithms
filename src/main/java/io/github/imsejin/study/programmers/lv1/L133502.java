@@ -11,7 +11,7 @@ import static java.util.stream.Collectors.toMap;
  */
 public class L133502 {
 
-    static int solve(int[] ingredient) {
+    static int solve0(int[] ingredient) {
         Ingredient[] ingredients = new Ingredient[ingredient.length];
         for (int i = 0; i < ingredient.length; i++) {
             ingredients[i] = Ingredient.from(ingredient[i]);
@@ -38,6 +38,25 @@ public class L133502 {
                 stack.pollLast();
                 stack.pollLast();
             }
+        }
+
+        return count;
+    }
+
+    static int solve1(int[] ingredient) {
+        if (ingredient.length < 4) return 0;
+
+        StringBuilder sb = new StringBuilder();
+        for (int n : ingredient) {
+            sb.append(n);
+        }
+
+        int count = 0;
+
+        int index;
+        while ((index = sb.indexOf("1231")) >= 0) {
+            count++;
+            sb.delete(index, index + 4);
         }
 
         return count;

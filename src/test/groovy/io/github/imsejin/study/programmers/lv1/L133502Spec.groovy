@@ -6,10 +6,11 @@ class L133502Spec extends Specification {
 
     def "test"() {
         when:
-        def actual = L133502.solve(ingredient as int[])
+        def actual = L133502.solve0(ingredient as int[])
 
         then:
         actual == expected
+        actual == L133502.solve1(ingredient as int[])
 
         where:
         ingredient                                 | expected
