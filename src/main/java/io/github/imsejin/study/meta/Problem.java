@@ -11,4 +11,6 @@ public @interface Problem {
 
     Tag[] tags() default {};
 
+    String description() default "";
+
 }
