@@ -18,23 +18,23 @@ public class L64061 {
             for (int i = 0; i < row.length; i++) {
                 int cell = board[i][move - 1];
 
-                if (cell > 0) {
-                    Integer prev = null;
-                    if (!stack.isEmpty()) {
-                        prev = stack.peekLast();
-                    }
+                if (cell == 0) continue;
 
-                    stack.offerLast(cell);
-                    board[i][move - 1] = 0;
-
-                    if (Objects.equals(prev, cell)) {
-                        stack.pollLast();
-                        stack.pollLast();
-                        count++;
-                    }
-
-                    break;
+                Integer prev = null;
+                if (!stack.isEmpty()) {
+                    prev = stack.peekLast();
                 }
+
+                stack.offerLast(cell);
+                board[i][move - 1] = 0;
+
+                if (Objects.equals(prev, cell)) {
+                    stack.pollLast();
+                    stack.pollLast();
+                    count++;
+                }
+
+                break;
             }
         }
 
